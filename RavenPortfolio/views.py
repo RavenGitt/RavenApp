@@ -1,7 +1,13 @@
-from django.shortcuts import render
-from .models import Project, Skill
+from django.views.generic import TemplateView
 
-def portfolio(request):
-    projects = Project.objects.all()
-    skills = Skill.objects.all()
-    return render(request, 'index.html', {'projects': projects, 'skills': skills})
+class Home(TemplateView):
+    template_name = "pages/home.html"
+
+class About(TemplateView):
+    template_name = "pages/about.html"
+
+class Hobbies(TemplateView):
+    template_name = "pages/hobbies.html"
+
+class Contacts(TemplateView):
+    template_name = "pages/contacts.html"

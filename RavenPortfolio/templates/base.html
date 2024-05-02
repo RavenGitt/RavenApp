@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="background-container">
+      <img src="{% static '/images/bg1.gif' %}" alt="Background Image" class="background-image">
+    </div>
+    <div class="contents">
+         <header>
+        <div class="navigation">
+        <a href="{% url "home" %}">HOME</a>
+        <a href="{% url "about" %}">ABOUT</a>
+        <a href="{% url "hobbies" %}">HOBBIES</a>
+        <a href="{% url "contacts" %}">CONTACTS</a>
+        </div>   
+    </header>
+    <main>
+
+    {% block content %}
+    
+    {% endblock content %}
+    </main>
+<footer>
+    raven2024
+</footer>
+    </div>
+   
+
+</body>
+</html>
